@@ -7,7 +7,7 @@
 
 /* Underline animation */
 .navbar-dark .navbar-nav .nav-link:hover {
-  color: #4caf50 ; /* Light green color */
+  color: #2ee034 ; /* Light green color */
 }
 
 .navbar-dark .navbar-nav .nav-link::after {
@@ -27,36 +27,14 @@
   width: 100%;
   height: 200px; /* Fixed height */
   object-fit: cover; /* Maintain aspect ratio */
-  background-color: #f5f5f5; /* Fallback background */
+  background-color: #a5a0a0; /* Fallback background */
 }
 
-/* Fallback styling for broken images */
-img[src=""],
-img:not([src]) {
-  visibility: hidden;
-  position: relative;
-}
-
-img[src=""]:after,
-img:not([src]):after {
-  content: "Image not available";
-  visibility: visible;
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: #f5f5f5;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  color: #888;
-}
 .bg-dark-green {
-  background-color: #006400; /* Dark green */
+  background-color: #0d750d; /* Dark green */
   /* Optional: Add shine with a gradient */
   background-image: linear-gradient(#006400, #008000);
 }
 .bg-shiny-green {
-  background: linear-gradient(135deg, #006400 0%, #008000 50%, #006400 100%);
+  background: linear-gradient(135deg, #068306 100%, #008000 50%, #006400 100%);
 }
