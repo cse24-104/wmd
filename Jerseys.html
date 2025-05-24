@@ -1,0 +1,199 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>GULP - Gear Up Like a Pro | Football Wear</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
+     <style>
+        .back-button {
+            padding: 8px 16px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        .back-button:hover {
+            background-color: #45a049;
+        }
+    </style>
+  </head>
+  <body>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+   <header class="bg-success py-3">
+     <div class="container">
+        <h1 class="text-center">Gear Up Like a Pro</h1>
+        <img src="images/logo/New Project.svg" class="logo mx-auto d-block" width="120" alt="logo">
+     </div>
+ <button class="back-button" onclick="window.history.back()">
+    Back to previous Page
+    </button>
+   </header>
+
+   <!--Brand logos - made horizontally scrollable on mobile-->
+   <div class="brand-logos py-3">
+    <div class="container">
+      <div class="row row-cols-5 flex-nowrap text-center">
+        <div class="col">
+          <img src="images/logo/adida.jpg" class="logo img-fluid" width="70px" height="70px" alt="Adidas">
+        </div>
+        <div class="col">
+          <img src="images/logo/puma.jpg" class="logo img-fluid" width="70px" height="70px" alt="Puma">
+        </div>
+        <div class="col">
+          <img src="images/logo/nike.jpg" class="logo img-fluid" width="70px" height="70px" alt="Nike">
+        </div>
+        <div class="col">
+          <img src="images/logo/fly.jpg" class="logo img-fluid" width="70px" height="70px" alt="Fly">
+        </div>
+        <div class="col">
+          <img src="images/logo/qatar.jpg" class="logo img-fluid" width="70px" height="70px" alt="Qatar">
+        </div>
+      </div>
+    </div>
+   </div>
+
+    <!--Carousel - Adjusted height for mobile-->
+    <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
+        <div class="carousel-indicators">
+          <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+          <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
+          <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
+        </div>
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <img src="images/Boots/hero-banner-d-adicelestialvictory_pack-2-240325.webp" class="img-fluid d-block w-100" alt="...">
+            <div class="carousel-caption d-none d-md-block">
+              <h5>ADIDAS CELESTIAL VICTORY PACK</h5>
+              <p>New colorways for predator</p>
+            </div>
+          </div>
+          <div class="carousel-item">
+            <img src="images/Boots/hero-banner-d-nike-prism-pack-070525.webp" class="img-fluid d-block w-100" alt="...">
+            <div class="carousel-caption d-none d-md-block">
+              <h5>NIKE PRISM PACK</h5>
+              <p>Summer update</p>
+            </div>
+          </div>
+          <div class="carousel-item">
+            <img src="images/Boots/hero-banner-d-puma_q2-3-010425.jpg" class="img-fluid d-block w-100" alt="...">
+            <div class="carousel-caption d-none d-md-block">
+              <h5>PUMA AUDACITY PACK</h5>
+              <p>fresh colors for spring football</p>
+            </div>
+          </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Next</span>
+        </button>
+      </div>
+
+   <div class="row row-cols-2 row-cols-md-3 g-4">
+    <div class="col">
+      <div class="card product-card">
+        <img src="images/Jerseys/1026752_Main_1946086.avif" class="card-img-top" alt="...">
+        <div class="card-body">
+          <h5 class="card-title"></h5>
+          <p class="card-text">$299.99</p>
+          <button class="btn btn-outline-dark add-to-cart">Add to Cart</button>
+        </div>
+      </div>
+    </div>
+    <div class="col">
+      <div class="card product-card">
+        <img src="images/Jerseys/1019649_Main_1870977.avif" class="card-img-top" alt="...">
+        <div class="card-body">
+          <h5 class="card-title"> </h5>
+          <p class="card-text">$170.99</p>
+          <button class="btn btn-outline-dark add-to-cart">Add to Cart</button>
+        </div>
+      </div>
+    </div>
+    <div class="col">
+      <div class="card product-card">
+        <img src="images/Jerseys/1019561_Main_1871042.avif" class="card-img-top" alt="...">
+        <div class="card-body">
+          <h5 class="card-title"> </h5>
+          <p class="card-text">$280.99</p>
+          <button class="btn btn-outline-dark add-to-cart">Add to Cart</button>
+        </div>
+      </div>
+    </div>
+   </div>
+   <div class="row row-cols-1 row-cols-md-3 g-4">
+    <div class="col">
+      <div class="card h-100 product-card">
+        <img src="images/Jerseys/1018403_Main_Thumb_1848320.avif" class="card-img-top" alt="...">
+        <div class="card-body">
+          <h5 class="card-title"></h5>
+          <p class="card-text">$180.99</p>
+          <button class="btn btn-outline-dark add-to-cart">Add to Cart</button>
+        </div>
+      </div>
+    </div>
+    <div class="col">
+      <div class="card h-100 product-card">
+        <img src="images/Jerseys/1022622_Main_1835964.avif" class="card-img-top" alt="...">
+        <div class="card-body">
+          <h5 class="card-title"></h5>
+          <p class="card-text">$299.99</p>
+          <button class="btn btn-outline-dark add-to-cart">Add to Cart</button>
+        </div>
+      </div>
+    </div>
+    <div class="col">
+      <div class="card h-100 product-card">
+        <img src="images/Jerseys/1018436_Main_1847749.avif" class="card-img-top" alt="...">
+        <div class="card-body">
+          <h5 class="card-title"></h5>
+          <p class="card-text">$179.99</p>
+          <button class="btn btn-outline-dark add-to-cart">Add to Cart</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <footer class="bg-dark text-white py-4">
+    <div class="container">
+      <div class="row row-cols-1 row-cols-md-3 g-4">
+          <div class="col">
+              <h5>GULP GEAR</h5>
+              <p>Gear Up Like a Pro with the best football equipment and apparel.</p>
+          </div>
+          <div class="col">
+              <h5>QUICK LINKS</h5>
+              <ul class="list-unstyled">
+                  <li><a href="index.html" class="text-white">Home</a></li>
+                  <li><a href="shop.html" class="text-white">Shop</a></li>
+                  <li><a href="feedback.html" class="text-white">Contact Us</a></li>
+              </ul>
+          </div>
+          <div class="col">
+              <h5>CONNECT WITH US</h5>
+              <a href="#" class="text-white me-2"><i class="fab fa-facebook-f"></i></a>
+              <a href="#" class="text-white me-2"><i class="fab fa-twitter"></i></a>
+              <a href="#" class="text-white me-2"><i class="fab fa-instagram"></i></a>
+          </div>
+      </div>
+      <hr class="my-4">
+      <div class="text-center">
+          <p class="mb-0">&copy; Created by MOTHEO RANKOPONG 2025 GULP Gear. All Rights Reserved.</p>
+      </div>
+  </div>
+  </footer>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="script.js"></script>
+
+</body>
+</html>
