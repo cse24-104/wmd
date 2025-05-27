@@ -29,12 +29,68 @@
   object-fit: cover; /* Maintain aspect ratio */
   background-color: #a5a0a0; /* Fallback background */
 }
-
-.bg-dark-green {
-  background-color: #0d750d; /* Dark green */
-  /* Optional: Add shine with a gradient */
-  background-image: linear-gradient(#006400, #008000);
-}
-.bg-shiny-green {
-  background: linear-gradient(135deg, #068306 100%, #008000 50%, #006400 100%);
-}
+ /* Custom styles */
+      :root {
+        --dark-green: #004d00;
+        --shiny-green: linear-gradient(135deg, #004d00 0%, #007700 50%, #004d00 100%);
+        --accent-green: #00aa00;
+      }
+      
+      .bg-shiny-green {
+        background: var(--shiny-green);
+      }
+      
+      body {
+        font-family: 'Poppins', sans-serif;
+      }
+      
+      .slogan {
+        font-family: 'Poppins', sans-serif;
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        color: white;
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+      }
+      
+      .navbar {
+        border-top: 2px solid var(--accent-green);
+        border-bottom: 2px solid var(--accent-green);
+      }
+      
+      .brand-logos {
+        background-color: #f8f9fa;
+      }
+      
+      .product-card {
+        transition: transform 0.3s ease;
+        border: none;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+      }
+      
+      .product-card:hover {
+        transform: translateY(-5px);
+      }
+      
+      .carousel-caption {
+        background-color: rgba(0, 0, 0, 0.6);
+        border-radius: 5px;
+      }
+      
+      footer {
+        border-top: 3px solid var(--accent-green);
+      }
+      
+      footer a:hover {
+        color: var(--accent-green) !important;
+      }
+      
+      @media (max-width: 768px) {
+        .slogan {
+          font-size: 1.5rem;
+        }
+        
+        .logo {
+          width: 80px !important;
+        }
+      }

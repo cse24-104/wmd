@@ -5,6 +5,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>GULP - Gear Up Like a Pro | Football Wear</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+      <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
   </head>
@@ -12,8 +20,8 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
    <header class="bg-shiny-green py-3">
      <div class="container">
-        <h1 class="text-center" style="font-family:'Poppins,serif'; font-weight: bold;">Gear Up Like a Pro</h1>
-        <img src="images/logo/New Project.svg" class="logo mx-auto d-block" width="120" alt="logo">
+        <h1 class="text-center slogan mb-2" style="">Gear Up Like a Pro</h1>
+        <img src="images/logo/New Project.svg" class="logo mx-auto d-block" width="120" alt="Gulp logo">
      </div>
 
      <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
@@ -53,6 +61,7 @@
    <!--Brand logos - made horizontally scrollable on mobile-->
    <div class="brand-logos py-3">
     <div class="container">
+      <h2 class="text-center mb-3">Our Trusted Brand</h2>
       <div class="row row-cols-5 flex-nowrap text-center overflow-x-auto">
         <div class="col">
           <img src="images/logo/adida.jpg" class="logo img-fluid" width="70px" height="70px" alt="Adidas">
@@ -86,6 +95,7 @@
         <div class="carousel-caption d-none d-md-block">
           <h5>Portugal 24/25 Kits</h5>
           <p>Available now in all sizes</p>
+          <a href="shop.html" class="btn btn-success">Shop Now</a>
         </div>
       </div>
       <div class="carousel-item">
@@ -93,6 +103,7 @@
         <div class="carousel-caption d-none d-md-block">
           <h5>Liverpool Home Kit</h5>
           <p>Pre-order now</p>
+           <a href="shop.html" class="btn btn-success">Pre-Order</a>
         </div>
       </div>
       <div class="carousel-item">
@@ -100,6 +111,7 @@
         <div class="carousel-caption d-none d-md-block">
           <h5>Chrome Dream Boots</h5>
           <p>Limited edition</p>
+           <a href="shop.html" class="btn btn-success">Shop Limited Edition</a>
         </div>
       </div>
     </div>
@@ -113,10 +125,8 @@
     </button>
   </div>
    <!-- Featured Products -->
-    <section class="featured-products py-4">
-      <div class="container" style="font-weight: bold;">
-       FEATURED PRODUCTS
-      </div>
+    <section class="featured-products py-5">
+      <div class="container" style="font-weight: bold;"> FEATURED PRODUCTS </div>
       <div class="row row-cols-1 row-cols-md-4 g-4">
         <div class="col">
           <div class="card product-card h-100">
@@ -124,7 +134,8 @@
             <div class="card-body">
               <h5 class="card-title">Keeper gloves</h5>
               <p class="card-text">$24.99</p>
-              <a href="product.html" class="btn btn-outline-dark">View Details</a>
+              <a href="shop.html" class="btn btn-outline-dark">Shop Now</a>
+              <button class="btn btn-success"><i class="fas fa-cart-plus"></i></button>
           </div>
           </div>
         </div>
@@ -135,6 +146,7 @@
               <h5 class="card-title">Puma  Elite</h5>
               <p class="card-text">$249.99</p>
               <a href="product.html" class="btn btn-outline-dark">View Details</a>
+              <button class="btn btn-success"><i class="fas fa-cart-plus"></i></button>
           </div>
           </div>
         </div>
@@ -145,6 +157,7 @@
               <h5 class="card-title">Nike Mercurial Vapor 15 Elite</h5>
               <p class="card-text">$249.99</p>
               <a href="product.html" class="btn btn-outline-dark">View Details</a>
+              <button class="btn btn-success"><i class="fas fa-cart-plus"></i></button>
           </div>
           </div>
         </div>
@@ -155,6 +168,7 @@
               <h5 class="card-title">Arsenal Away Kit 2025</h5>
               <p class="card-text">$99.99</p>
               <a href="product.html" class="btn btn-outline-dark">View Details</a>
+              <button class="btn btn-success"><i class="fas fa-cart-plus"></i></button>
           </div>
           </div>
         </div>
@@ -163,60 +177,99 @@
     </section>
   <!--PORPULAR RIGHT NOW-->
   <section class="porpulor-now py-4 bg-light" style="font-weight: bold;">
-    <div>
-      PORPULAR RIGHT NOW !!!!
-    </div>
     <div class="container">
+     <h2 class="text-center mb-4">POPULAR NOW!</h2>
       <div class="row row-cols-1 row-cols-md-2 g-4">
         <div class="col">
           <div class="card">
             <img src="images/pic/sb---replica-kit-vault---d-170924.webp" class="card-img-top" alt="...">
             <div class="card-body text-center">
               <h5>Retro Kits Collection</h5>
-              <a href="shop.html" class="btn btn-primary btn-sm">Browse</a>
+              <p class="text-muted">Relive the glory days with classic kits</p>
+              <a href="shop.html" class="btn btn-primary btn-sm">Browse Collection</a>
+              <button class="btn btn-success"><i class="fas fa-cart-plus"></i></button>
             </div>
           </div>
         </div>
         <div class="col">
-          <div class="card">
+          <div class="card h-100">
             <img src="images/pic/sb-replica-sale-push-d-220125.avif" class=" card-img-top" alt="...">
             <div class="card-body text-center">
               <h5>End of Season Sale</h5>
+              <p class="text-muted">Up to 50% off selected items</p>
               <a href="shop.html" class="btn btn-primary btn-sm">Shop Deals</a>
+              <button class="btn btn-success"><i class="fas fa-cart-plus"></i></button>
             </div>
           </div>
         </div>
     </div>
-  </section>
-  
+  </div>
+</section>
+      <!-- Newsletter Section -->
+    <section class="newsletter py-5 bg-dark text-white">
+      <div class="container">
+        <div class="row justify-content-center">
+          <div class="col-md-8 text-center">
+            <h2>Stay Updated</h2>
+            <p class="lead">Subscribe to our newsletter for exclusive offers and new arrivals</p>
+            <form class="row g-2 justify-content-center">
+              <div class="col-md-8">
+                <input type="email" class="form-control form-control-lg" placeholder="Your email address">
+              </div>
+              <div class="col-md-4">
+                <button type="submit" class="btn btn-success btn-lg w-100">Subscribe</button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
  
-    <footer class="bg-dark text-white py-4">
+   <!-- Footer -->
+    <footer class="bg-dark text-white py-5">
       <div class="container">
         <div class="row row-cols-1 row-cols-md-3 g-4">
-            <div class="col">
-                <h5>GULP GEAR</h5>
-                <p>Gear Up Like a Pro with the best football equipment and apparel.</p>
+          <div class="col">
+            <h5>GULP GEAR</h5>
+            <p>Gear Up Like a Pro with the best football equipment and apparel.</p>
+            <img src="images/logo/New Project.svg" class="logo" width="120" alt="GULP Logo">
+          </div>
+          <div class="col">
+            <h5>QUICK LINKS</h5>
+            <ul class="list-unstyled">
+              <li class="mb-2"><a href="index.html" class="text-white text-decoration-none">Home</a></li>
+              <li class="mb-2"><a href="shop.html" class="text-white text-decoration-none">Shop</a></li>
+              <li class="mb-2"><a href="product.html" class="text-white text-decoration-none">Products</a></li>
+              <li class="mb-2"><a href="#New Arrivals" class="text-white text-decoration-none">New Arrivals</a></li>
+              <li class="mb-2"><a href="feedback.html" class="text-white text-decoration-none">Contact Us</a></li>
+            </ul>
+          </div>
+          <div class="col">
+            <h5>CONNECT WITH US</h5>
+            <div class="social-icons mb-3">
+              <a href="#" class="text-white me-3"><i class="fab fa-facebook-f fa-lg"></i></a>
+              <a href="#" class="text-white me-3"><i class="fab fa-twitter fa-lg"></i></a>
+              <a href="#" class="text-white me-3"><i class="fab fa-instagram fa-lg"></i></a>
+              <a href="#" class="text-white me-3"><i class="fab fa-tiktok fa-lg"></i></a>
             </div>
-            <div class="col">
-                <h5>QUICK LINKS</h5>
-                <ul class="list-unstyled">
-                    <li><a href="index.html" class="text-white">Home</a></li>
-                    <li><a href="shop.html" class="text-white">Shop</a></li>
-                    <li><a href="feedback.html" class="text-white">Contact Us</a></li>
-                </ul>
-            </div>
-            <div class="col">
-                <h5>CONNECT WITH US</h5>
-                <a href="#" class="text-white me-2"><i class="fab fa-facebook-f"></i></a>
-                <a href="#" class="text-white me-2"><i class="fab fa-twitter"></i></a>
-                <a href="#" class="text-white me-2"><i class="fab fa-instagram"></i></a>
-            </div>
+            <h5>CUSTOMER SERVICE</h5>
+            <ul class="list-unstyled">
+              <li class="mb-2"><a href="#" class="text-white text-decoration-none">Shipping Policy</a></li>
+              <li class="mb-2"><a href="#" class="text-white text-decoration-none">Returns & Exchanges</a></li>
+              <li class="mb-2"><a href="#" class="text-white text-decoration-none">FAQs</a></li>
+            </ul>
+          </div>
         </div>
         <hr class="my-4">
-        <div class="text-center">
-            <p class="mb-0">&copy; Created by MOTHEO RANKOPONG 2025 GULP Gear. All Rights Reserved.</p>
+        <div class="row">
+          <div class="col-md-6 text-center text-md-start">
+            <p class="mb-0">&copy; 2025 GULP Gear. All Rights Reserved.</p>
+          </div>
+          <div class="col-md-6 text-center text-md-end">
+            <p class="mb-0">Created by MOTHEO RANKOPONG</p>
+          </div>
         </div>
-    </div>
+      </div>
     </footer>
     
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
