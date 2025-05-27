@@ -72,3 +72,28 @@ function validateForm() {
     
     return true;
 }
+  <script>
+      // Add to cart functionality
+      document.querySelectorAll('.add-to-cart').forEach(button => {
+        button.addEventListener('click', function() {
+          const productCard = this.closest('.product-card');
+          const productId = productCard.dataset.id;
+          const productName = productCard.querySelector('.card-title').textContent;
+          const productPrice = productCard.querySelector('.text-success').textContent;
+          
+          // In a real app, you would add this to a cart array or send to server
+          alert(`Added to cart: ${productName} - ${productPrice}`);
+          
+          // You can add animation here
+          this.textContent = 'Added!';
+          this.classList.add('btn-success');
+          this.classList.remove('btn-outline-dark');
+          
+          setTimeout(() => {
+            this.textContent = 'Add to Cart';
+            this.classList.remove('btn-success');
+            this.classList.add('btn-outline-dark');
+          }, 2000);
+        });
+      });
+    </script>
