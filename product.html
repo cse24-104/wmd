@@ -3,268 +3,566 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Product Details | GULP Gear</title>
+    <title>Inter Miami Home Jersey 2024 | GULP Gear</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+    <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
-    <link rel="stylesheet" href="style.css">
+    <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="style.css">
     <style>
-        .back-button {
-            padding: 8px 16px;
-            background-color: #4CAF50;
-            color: white;
-            border: none;
-            border-radius: 4px;
-            cursor: pointer;
-            font-size: 16px;
+      :root {
+        --dark-green: #004d00;
+        --shiny-green: linear-gradient(135deg, #004d00 0%, #007700 50%, #004d00 100%);
+        --accent-green: #00aa00;
+      }
+      
+      body {
+        font-family: 'Poppins', sans-serif;
+      }
+      
+      .navbar {
+        border-top: 2px solid var(--accent-green);
+        border-bottom: 2px solid var(--accent-green);
+      }
+      
+      .back-button {
+        background-color: var(--dark-green);
+        color: white;
+        border: none;
+        padding: 8px 16px;
+        border-radius: 4px;
+        margin: 15px;
+        transition: all 0.3s ease;
+      }
+      
+      .back-button:hover {
+        background-color: #003300;
+        transform: translateY(-2px);
+      }
+      
+      .product-images .main-image {
+        border: 1px solid #eee;
+        border-radius: 5px;
+        overflow: hidden;
+      }
+      
+      .thumbnail-images img {
+        cursor: pointer;
+        transition: all 0.3s ease;
+        border: 2px solid transparent;
+      }
+      
+      .thumbnail-images img:hover,
+      .thumbnail-images img.active {
+        border-color: var(--accent-green);
+      }
+      
+      .price {
+        color: var(--dark-green);
+        font-weight: 700;
+      }
+      
+      .old-price {
+        text-decoration: line-through;
+        color: #999;
+      }
+      
+      .size-selector .btn {
+        width: 50px;
+      }
+      
+      .size-selector .btn-check:checked + .btn {
+        background-color: var(--dark-green);
+        color: white;
+      }
+      
+      .quantity-selector .btn {
+        width: 40px;
+      }
+      
+      .quantity-selector input {
+        width: 50px;
+        text-align: center;
+      }
+      
+      .add-to-cart {
+        background-color: var(--dark-green);
+        color: white;
+        padding: 12px 24px;
+        font-weight: 600;
+        transition: all 0.3s ease;
+      }
+      
+      .add-to-cart:hover {
+        background-color: #003300;
+        transform: translateY(-2px);
+      }
+      
+      .wishlist-btn {
+        padding: 12px 24px;
+        font-weight: 600;
+      }
+      
+      .product-details-info {
+        background-color: #f8f9fa;
+        padding: 20px;
+        border-radius: 5px;
+      }
+      
+      .review {
+        background-color: #f8f9fa;
+        padding: 20px;
+        border-radius: 5px;
+        margin-bottom: 15px;
+      }
+      
+      .badge {
+        font-size: 0.8rem;
+      }
+      
+      @media (max-width: 768px) {
+        .product-images {
+          margin-bottom: 30px;
         }
-
-        .back-button:hover {
-            background-color: #45a049;
+        
+        .d-md-flex {
+          flex-direction: column;
         }
+        
+        .me-md-2 {
+          margin-right: 0 !important;
+          margin-bottom: 10px;
+        }
+      }
     </style>
 </head>
 <body>
-    
-    <!-- Navigation (same as index.html) -->
+    <!-- Navigation -->
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-        <!-- Copy navigation from index.html -->
-        <div class="container-fluid">
-            <a class="navbar-brand" href="index.html"></a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-              <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarSupportedContent">
-              <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                <li class="nav-item"><a class="nav-link active" aria-current="page" href="index.html">Home</a></li>
-                <li class="nav-item"><a class="nav-link" href="shop.html">Shop</a></li>
-                <LI class="nav-item"><a class="nav-link" href="product.html">Product</a></LI>
-              <li class="nav-item"><a class="nav-link" href="#New Arrivals">New Arrivals</a></li>
-                <li class="nav-item"><a class="nav-link" href="feedback.html">Contact</a></li>
-                <li class="nav-item"><a class="nav-link" href="cart.html"><i class="fas fa-shopping-cart"></i></a></li>
-                <li class="nav-item dropdown">
-                  <a class="nav-link dropdown-toggle" href="My Account.html " id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                    My Account
-                  </a>
-                  <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                    <li><a class="dropdown-item" href="Login">Login</a></li>
-                    <li><a class="dropdown-item" href="Sign Up">Sign Up     new customer!</a></li>
-                    <li><a class="dropdown-item" href="Order History">Order History</a></li>
-                  </ul>
-                </li>
+      <div class="container">
+        <a class="navbar-brand" href="index.html">
+          <img src="images/logo/New Project.svg" alt="GULP Logo" width="100">
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+            <li class="nav-item"><a class="nav-link active" href="shop.html">Shop</a></li>
+            <li class="nav-item"><a class="nav-link" href="product.html">Products</a></li>
+            <li class="nav-item"><a class="nav-link" href="#New Arrivals">New Arrivals</a></li>
+            <li class="nav-item"><a class="nav-link" href="feedback.html">Contact</a></li>
+            <li class="nav-item"><a class="nav-link" href="cart.html"><i class="fas fa-shopping-cart"></i> Cart</a></li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown">
+                My Account
+              </a>
+              <ul class="dropdown-menu">
+                <li><a class="dropdown-item" href="Login">Login</a></li>
+                <li><a class="dropdown-item" href="Sign Up">Sign Up - New Customer!</a></li>
+                <li><a class="dropdown-item" href="Order History">Order History</a></li>
               </ul>
-              <form class="d-flex">
-                <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-                <button class="btn btn-outline-success" type="submit">Search</button>
-              </form>
-            </div>
-          </div>
+            </li>
+          </ul>
+          <form class="d-flex">
+            <input class="form-control me-2" type="search" placeholder="Search products..." aria-label="Search">
+            <button class="btn btn-outline-success" type="submit">Search</button>
+          </form>
+        </div>
+      </div>
     </nav>
+
     <button class="back-button" onclick="window.history.back()">
-    Back to previous Page
+      <i class="fas fa-arrow-left me-2"></i>Back to Shop
     </button>
 
     <!-- Product Details Section -->
     <section class="product-details py-5">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-6">
-                    <div class="product-images">
-                        <div class="main-image mb-3">
-                            <img src="images/Jerseys/1026752_Main_1946086.avif" class="img-fluid" alt="Inter Miami Home Jersey" id="main-image">
-                        </div>
-                        <div class="thumbnail-images d-flex">
-                            <img src="images/Boots/1032287_Main_1964323.jpg" class="img-thumbnail me-2" width="80" alt="Thumbnail 1">
-                            <img src="images/Jerseys/j1.jpg" class="img-thumbnail me-2" width="80" alt="Thumbnail 2">
-                            <img src="images/Boots/1026440_Main_1966837.jpg" class="img-thumbnail" width="80" alt="Thumbnail 3">
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-6">
-                    <h1>Inter Miami Home Jersey 2024</h1>
-                    <div class="rating mb-3">
-                        <i class="fas fa-star text-warning"></i>
-                        <i class="fas fa-star text-warning"></i>
-                        <i class="fas fa-star text-warning"></i>
-                        <i class="fas fa-star text-warning"></i>
-                        <i class="fas fa-star-half-alt text-warning"></i>
-                        <span class="ms-2">(408 reviews)</span>
-                    </div>
-                    <h3 class="price mb-4">$89.99</h3>
-                    
-                    <div class="size-selector mb-4">
-                        <h5>Size</h5>
-                        <div class="btn-group" role="group">
-                            <input type="radio" class="btn-check" name="size" id="size-s" autocomplete="off" checked>
-                            <label class="btn btn-outline-dark" for="size-s">S</label>
-                            
-                            <input type="radio" class="btn-check" name="size" id="size-m" autocomplete="off">
-                            <label class="btn btn-outline-dark" for="size-m">M</label>
-                            
-                            <input type="radio" class="btn-check" name="size" id="size-l" autocomplete="off">
-                            <label class="btn btn-outline-dark" for="size-l">L</label>
-                            
-                            <input type="radio" class="btn-check" name="size" id="size-xl" autocomplete="off">
-                            <label class="btn btn-outline-dark" for="size-xl">XL</label>
-                        </div>
-                    </div>
-                    
-                    <div class="quantity-selector mb-4">
-                        <h5>Quantity</h5>
-                        <div class="input-group" style="width: 150px;">
-                            <button class="btn btn-outline-secondary decrease">-</button>
-                            <input type="text" class="form-control text-center quantity" value="1">
-                            <button class="btn btn-outline-secondary increase">+</button>
-                        </div>
-                    </div>
-                    
-                    <div class="d-grid gap-2 d-md-flex">
-                        <button class="btn btn-primary me-md-2 add-to-cart">
-                            <i class="fas fa-shopping-cart me-2"></i>ADD TO CART
-                        </button>
-                        <button class="btn btn-outline-dark">
-                            <i class="fas fa-heart me-2"></i>WISHLIST
-                        </button>
-                    </div>
-                    
-                    <hr class="my-4">
-                    
-                    <div class="product-details-info">
-                        <h5>Product Details</h5>
-                        <p>The official 2024 Inter Miami home jersey features the club's iconic pink color with black and white accents. Made with breathable, moisture-wicking fabric to keep you comfortable during matches.</p>
-                        
-                        <ul>
-                            <li>100% polyester</li>
-                            <li>Machine washable</li>
-                            <li>Official club crest and sponsor logos</li>
-                            <li>Designed for performance and style</li>
-                        </ul>
-                    </div>
-                </div>
+      <div class="container">
+        <div class="row">
+          <div class="col-md-6">
+            <div class="product-images">
+              <div class="main-image mb-3">
+                <span class="badge bg-danger position-absolute top-0 start-0 m-2">Sale</span>
+                <img src="images/Jerseys/1026752_Main_1946086.avif" class="img-fluid" alt="Inter Miami Home Jersey" id="main-image">
+              </div>
+              <div class="thumbnail-images d-flex justify-content-center">
+                <img src="images/Jerseys/1026752_Main_1946086.avif" class="img-thumbnail me-2 active" width="80" alt="Front View" data-main="images/Jerseys/1026752_Main_1946086.avif">
+                <img src="images/Jerseys/j1.jpg" class="img-thumbnail me-2" width="80" alt="Back View" data-main="images/Jerseys/j1.jpg">
+                <img src="images/Jerseys/jersey-detail.jpg" class="img-thumbnail" width="80" alt="Detail View" data-main="images/Jerseys/jersey-detail.jpg">
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <h1 class="mb-3">Inter Miami Home Jersey 2024</h1>
+            <div class="rating mb-3">
+              <i class="fas fa-star text-warning"></i>
+              <i class="fas fa-star text-warning"></i>
+              <i class="fas fa-star text-warning"></i>
+              <i class="fas fa-star text-warning"></i>
+              <i class="fas fa-star-half-alt text-warning"></i>
+              <span class="ms-2">(408 reviews)</span>
+              <a href="#reviews" class="ms-3">See all reviews</a>
             </div>
             
-            <!-- Product Reviews Section -->
-            <div class="row mt-5">
-                <div class="col-12">
-                    <h3>Customer Reviews</h3>
-                    
-                    <div class="review mb-4">
-                        <div class="d-flex justify-content-between">
-                            <h5>Great Jersey!</h5>
-                            <div class="rating">
-                                <i class="fas fa-star text-warning"></i>
-                                <i class="fas fa-star text-warning"></i>
-                                <i class="fas fa-star text-warning"></i>
-                                <i class="fas fa-star text-warning"></i>
-                                <i class="fas fa-star text-warning"></i>
-                            </div>
-                        </div>
-                        <p class="text-muted">By John D. on April 15, 2025</p>
-                        <p>The quality of this jersey is excellent. Fits perfectly and the material is very comfortable. Highly recommend!</p>
-                    </div>
-                    
-                    <div class="review">
-                        <div class="d-flex justify-content-between">
-                            <h5>Good but runs small</h5>
-                            <div class="rating">
-                                <i class="fas fa-star text-warning"></i>
-                                <i class="fas fa-star text-warning"></i>
-                                <i class="fas fa-star text-warning"></i>
-                                <i class="fas fa-star text-warning"></i>
-                                <i class="far fa-star text-warning"></i>
-                            </div>
-                        </div>
-                        <p class="text-muted">By Sarah M. on March 28, 2025</p>
-                        <p>Love the design but it runs a bit small. I usually wear medium but had to exchange for a large.</p>
-                    </div>
-                </div>
+            <div class="price mb-4">
+              <h3 class="d-inline">$89.99</h3>
+              <span class="old-price ms-2">$99.99</span>
+              <span class="badge bg-success ms-2">Save 10%</span>
             </div>
+            
+            <div class="size-selector mb-4">
+              <h5>Size</h5>
+              <div class="btn-group" role="group">
+                <input type="radio" class="btn-check" name="size" id="size-xs" autocomplete="off">
+                <label class="btn btn-outline-dark" for="size-xs">XS</label>
+                
+                <input type="radio" class="btn-check" name="size" id="size-s" autocomplete="off" checked>
+                <label class="btn btn-outline-dark" for="size-s">S</label>
+                
+                <input type="radio" class="btn-check" name="size" id="size-m" autocomplete="off">
+                <label class="btn btn-outline-dark" for="size-m">M</label>
+                
+                <input type="radio" class="btn-check" name="size" id="size-l" autocomplete="off">
+                <label class="btn btn-outline-dark" for="size-l">L</label>
+                
+                <input type="radio" class="btn-check" name="size" id="size-xl" autocomplete="off">
+                <label class="btn btn-outline-dark" for="size-xl">XL</label>
+              </div>
+              <a href="#" class="d-block mt-2" data-bs-toggle="modal" data-bs-target="#sizeGuideModal">Size Guide</a>
+            </div>
+            
+            <div class="quantity-selector mb-4">
+              <h5>Quantity</h5>
+              <div class="input-group" style="width: 150px;">
+                <button class="btn btn-outline-secondary decrease">-</button>
+                <input type="text" class="form-control text-center quantity" value="1" min="1">
+                <button class="btn btn-outline-secondary increase">+</button>
+              </div>
+            </div>
+            
+            <div class="d-grid gap-2 d-md-flex mb-4">
+              <button class="btn add-to-cart me-md-2">
+                <i class="fas fa-shopping-cart me-2"></i>ADD TO CART
+              </button>
+              <button class="btn btn-outline-dark wishlist-btn">
+                <i class="fas fa-heart me-2"></i>WISHLIST
+              </button>
+            </div>
+            
+            <div class="delivery-info mb-4 p-3 bg-light rounded">
+              <p class="mb-1"><i class="fas fa-truck me-2 text-success"></i> Free delivery on orders over $50</p>
+              <p class="mb-1"><i class="fas fa-undo me-2 text-success"></i> Free returns within 30 days</p>
+              <p><i class="fas fa-shield-alt me-2 text-success"></i> 2-year warranty on all products</p>
+            </div>
+            
+            <div class="product-details-info mb-5">
+              <h5 class="mb-3">Product Details</h5>
+              <p>The official 2024 Inter Miami home jersey features the club's iconic pink color with black and white accents. Made with breathable, moisture-wicking fabric to keep you comfortable during matches.</p>
+              
+              <ul class="mb-0">
+                <li>100% recycled polyester</li>
+                <li>Machine washable (cold recommended)</li>
+                <li>Official club crest and sponsor logos</li>
+                <li>Designed for performance and style</li>
+                <li>Dri-FIT technology wicks away sweat</li>
+                <li>Lightweight fabric for maximum comfort</li>
+              </ul>
+            </div>
+            
+            <!-- Share buttons -->
+            <div class="share-buttons">
+              <h6>Share this product:</h6>
+              <a href="#" class="text-dark me-3"><i class="fab fa-facebook-f fa-lg"></i></a>
+              <a href="#" class="text-dark me-3"><i class="fab fa-twitter fa-lg"></i></a>
+              <a href="#" class="text-dark me-3"><i class="fab fa-instagram fa-lg"></i></a>
+              <a href="#" class="text-dark me-3"><i class="fab fa-pinterest fa-lg"></i></a>
+            </div>
+          </div>
         </div>
+        
+        <!-- Product Tabs -->
+        <div class="row mt-5">
+          <div class="col-12">
+            <ul class="nav nav-tabs" id="productTabs" role="tablist">
+              <li class="nav-item" role="presentation">
+                <button class="nav-link active" id="description-tab" data-bs-toggle="tab" data-bs-target="#description" type="button">Description</button>
+              </li>
+              <li class="nav-item" role="presentation">
+                <button class="nav-link" id="specs-tab" data-bs-toggle="tab" data-bs-target="#specs" type="button">Specifications</button>
+              </li>
+              <li class="nav-item" role="presentation">
+                <button class="nav-link" id="reviews-tab" data-bs-toggle="tab" data-bs-target="#reviews" type="button">Reviews (408)</button>
+              </li>
+              <li class="nav-item" role="presentation">
+                <button class="nav-link" id="shipping-tab" data-bs-toggle="tab" data-bs-target="#shipping" type="button">Shipping & Returns</button>
+              </li>
+            </ul>
+            <div class="tab-content p-3 border border-top-0 rounded-bottom">
+              <div class="tab-pane fade show active" id="description" role="tabpanel">
+                <h4>Official 2024 Inter Miami CF Home Jersey</h4>
+                <p>Show your support for Inter Miami CF in style with the official 2024 home jersey. This authentic replica features the same design worn by the players on the pitch, complete with official club badges and sponsor logos.</p>
+                <p>The jersey is constructed from high-performance fabric that wicks moisture away from your skin to keep you cool and comfortable whether you're playing or cheering from the stands. The lightweight material provides excellent breathability and freedom of movement.</p>
+                <p>This season's design features the club's signature pink color with black and white accents, creating a bold and distinctive look that represents the energy and passion of Miami football.</p>
+              </div>
+              <div class="tab-pane fade" id="specs" role="tabpanel">
+                <table class="table">
+                  <tbody>
+                    <tr>
+                      <th scope="row">Material</th>
+                      <td>100% recycled polyester</td>
+                    </tr>
+                    <tr>
+                      <th scope="row">Fit</th>
+                      <td>Regular fit</td>
+                    </tr>
+                    <tr>
+                      <th scope="row">Care Instructions</th>
+                      <td>Machine wash cold, do not bleach, tumble dry low, iron low</td>
+                    </tr>
+                    <tr>
+                      <th scope="row">Technology</th>
+                      <td>Dri-FIT moisture management</td>
+                    </tr>
+                    <tr>
+                      <th scope="row">Origin</th>
+                      <td>Imported</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+              <div class="tab-pane fade" id="reviews" role="tabpanel">
+                <div class="review mb-4">
+                  <div class="d-flex justify-content-between">
+                    <h5>Great Jersey!</h5>
+                    <div class="rating">
+                      <i class="fas fa-star text-warning"></i>
+                      <i class="fas fa-star text-warning"></i>
+                      <i class="fas fa-star text-warning"></i>
+                      <i class="fas fa-star text-warning"></i>
+                      <i class="fas fa-star text-warning"></i>
+                    </div>
+                  </div>
+                  <p class="text-muted">By John D. on April 15, 2025</p>
+                  <p>The quality of this jersey is excellent. Fits perfectly and the material is very comfortable. Highly recommend!</p>
+                </div>
+                
+                <div class="review mb-4">
+                  <div class="d-flex justify-content-between">
+                    <h5>Good but runs small</h5>
+                    <div class="rating">
+                      <i class="fas fa-star text-warning"></i>
+                      <i class="fas fa-star text-warning"></i>
+                      <i class="fas fa-star text-warning"></i>
+                      <i class="fas fa-star text-warning"></i>
+                      <i class="far fa-star text-warning"></i>
+                    </div>
+                  </div>
+                  <p class="text-muted">By Sarah M. on March 28, 2025</p>
+                  <p>Love the design but it runs a bit small. I usually wear medium but had to exchange for a large.</p>
+                </div>
+                
+                <div class="review mb-4">
+                  <div class="d-flex justify-content-between">
+                    <h5>Perfect gift</h5>
+                    <div class="rating">
+                      <i class="fas fa-star text-warning"></i>
+                      <i class="fas fa-star text-warning"></i>
+                      <i class="fas fa-star text-warning"></i>
+                      <i class="fas fa-star text-warning"></i>
+                      <i class="fas fa-star text-warning"></i>
+                    </div>
+                  </div>
+                  <p class="text-muted">By Michael T. on March 10, 2025</p>
+                  <p>Bought this for my son who is a huge Inter Miami fan. He loves it and wears it all the time. Great quality!</p>
+                </div>
+                
+                <button class="btn btn-outline-dark">Write a Review</button>
+              </div>
+              <div class="tab-pane fade" id="shipping" role="tabpanel">
+                <h4>Shipping Information</h4>
+                <p>We offer fast and reliable shipping options:</p>
+                <ul>
+                  <li>Standard Shipping: 3-5 business days ($4.99)</li>
+                  <li>Express Shipping: 2-3 business days ($9.99)</li>
+                  <li>Free shipping on orders over $50</li>
+                </ul>
+                
+                <h4 class="mt-4">Returns Policy</h4>
+                <p>We want you to be completely satisfied with your purchase. If you're not happy for any reason, you can return your item within 30 days of receipt for a full refund or exchange.</p>
+                <p>Items must be in original condition with all tags attached. Please note that personalized items cannot be returned unless faulty.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Related Products -->
+        <div class="row mt-5">
+          <div class="col-12">
+            <h3 class="mb-4">You May Also Like</h3>
+            <div class="row">
+              <div class="col-md-3 mb-4">
+                <div class="card product-card h-100">
+                  <img src="images/Jerseys/inter-miami-away.jpg" class="card-img-top" alt="Inter Miami Away Jersey">
+                  <div class="card-body">
+                    <h5 class="card-title">Inter Miami Away Jersey 2024</h5>
+                    <p class="card-text">$89.99</p>
+                    <a href="product.html" class="btn btn-outline-dark">View Details</a>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-3 mb-4">
+                <div class="card product-card h-100">
+                  <img src="images/Jerseys/inter-miami-third.jpg" class="card-img-top" alt="Inter Miami Third Jersey">
+                  <div class="card-body">
+                    <h5 class="card-title">Inter Miami Third Jersey 2024</h5>
+                    <p class="card-text">$89.99</p>
+                    <a href="product.html" class="btn btn-outline-dark">View Details</a>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-3 mb-4">
+                <div class="card product-card h-100">
+                  <img src="images/Accessories/inter-miami-scarf.jpg" class="card-img-top" alt="Inter Miami Scarf">
+                  <div class="card-body">
+                    <h5 class="card-title">Inter Miami Official Scarf</h5>
+                    <p class="card-text">$24.99</p>
+                    <a href="product.html" class="btn btn-outline-dark">View Details</a>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-3 mb-4">
+                <div class="card product-card h-100">
+                  <img src="images/Accessories/inter-miami-cap.jpg" class="card-img-top" alt="Inter Miami Cap">
+                  <div class="card-body">
+                    <h5 class="card-title">Inter Miami Official Cap</h5>
+                    <p class="card-text">$29.99</p>
+                    <a href="product.html" class="btn btn-outline-dark">View Details</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
     </section>
 
-    <!-- Footer (same as index.html) -->
-    <footer class="bg-dark text-white py-4">
-        <!-- Copy footer from index.html -->
-        <div class="container">
-            <div class="row">
-                <div class="col-md-4">
-                    <h5>GULP GEAR</h5>
-                    <p>Gear Up Like a Pro with the best football equipment and apparel.</p>
-                </div>
-                <div class="col-md-4">
-                    <h5>QUICK LINKS</h5>
-                    <ul class="list-unstyled">
-                        <li><a href="index.html" class="text-white">Home</a></li>
-                        <li><a href="shop.html" class="text-white">Shop</a></li>
-                        <li><a href="feedback.html" class="text-white">Contact Us</a></li>
-                    </ul>
-                </div>
-                <div class="col-md-4">
-                    <h5>CONNECT WITH US</h5>
-                    <a href="#" class="text-white me-2"><i class="fab fa-facebook-f"></i></a>
-                    <a href="#" class="text-white me-2"><i class="fab fa-twitter"></i></a>
-                    <a href="#" class="text-white me-2"><i class="fab fa-instagram"></i></a>
-                </div>
-            </div>
-            <hr>
-            <div class="text-center">
-                <p>&copy; Created by MOTHEO RANKOPONG 2025 GULP Gear. All Rights Reserved.</p>
-            </div>
+    <!-- Size Guide Modal -->
+    <div class="modal fade" id="sizeGuideModal" tabindex="-1" aria-hidden="true">
+      <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title">Size Guide</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <table class="table table-bordered">
+              <thead>
+                <tr>
+                  <th>Size</th>
+                  <th>Chest (inches)</th>
+                  <th>Waist (inches)</th>
+                  <th>Length (inches)</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>XS</td>
+                  <td>32-34</td>
+                  <td>26-28</td>
+                  <td>25</td>
+                </tr>
+                <tr>
+                  <td>S</td>
+                  <td>35-37</td>
+                  <td>29-31</td>
+                  <td>26</td>
+                </tr>
+                <tr>
+                  <td>M</td>
+                  <td>38-40</td>
+                  <td>32-34</td>
+                  <td>27</td>
+                </tr>
+                <tr>
+                  <td>L</td>
+                  <td>41-43</td>
+                  <td>35-37</td>
+                  <td>28</td>
+                </tr>
+                <tr>
+                  <td>XL</td>
+                  <td>44-46</td>
+                  <td>38-40</td>
+                  <td>29</td>
+                </tr>
+              </tbody>
+            </table>
+            <p><strong>How to measure:</strong> Measure around the fullest part of your chest, keeping the tape measure horizontal.</p>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+          </div>
         </div>
+      </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-white py-5">
+      <div class="container">
+        <div class="row row-cols-1 row-cols-md-3 g-4">
+          <div class="col">
+            <h5>GULP GEAR</h5>
+            <p>Gear Up Like a Pro with the best football equipment and apparel.</p>
+            <img src="images/logo/New Project.svg" class="logo" width="120" alt="GULP Logo">
+          </div>
+          <div class="col">
+            <h5>QUICK LINKS</h5>
+            <ul class="list-unstyled">
+              <li class="mb-2"><a href="index.html" class="text-white text-decoration-none">Home</a></li>
+              <li class="mb-2"><a href="shop.html" class="text-white text-decoration-none">Shop</a></li>
+              <li class="mb-2"><a href="product.html" class="text-white text-decoration-none">Products</a></li>
+              <li class="mb-2"><a href="#New Arrivals" class="text-white text-decoration-none">New Arrivals</a></li>
+              <li class="mb-2"><a href="feedback.html" class="text-white text-decoration-none">Contact Us</a></li>
+            </ul>
+          </div>
+          <div class="col">
+            <h5>CONNECT WITH US</h5>
+            <div class="social-icons mb-3">
+              <a href="#" class="text-white me-3"><i class="fab fa-facebook-f fa-lg"></i></a>
+              <a href="#" class="text-white me-3"><i class="fab fa-twitter fa-lg"></i></a>
+              <a href="#" class="text-white me-3"><i class="fab fa-instagram fa-lg"></i></a>
+              <a href="#" class="text-white me-3"><i class="fab fa-tiktok fa-lg"></i></a>
+            </div>
+            <h5>CUSTOMER SERVICE</h5>
+            <ul class="list-unstyled">
+              <li class="mb-2"><a href="#" class="text-white text-decoration-none">Shipping Policy</a></li>
+              <li class="mb-2"><a href="#" class="text-white text-decoration-none">Returns & Exchanges</a></li>
+              <li class="mb-2"><a href="#" class="text-white text-decoration-none">FAQs</a></li>
+            </ul>
+          </div>
+        </div>
+        <hr class="my-4">
+        <div class="row">
+          <div class="col-md-6 text-center text-md-start">
+            <p class="mb-0">&copy; 2025 GULP Gear. All Rights Reserved.</p>
+          </div>
+          <div class="col-md-6 text-center text-md-end">
+            <p class="mb-0">Created by MOTHEO RANKOPONG</p>
+          </div>
+        </div>
+      </div>
     </footer>
 
+    <!-- Bootstrap JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Custom JS -->
     <script src="script.js"></script>
-    <script>
-        // Product page functionality
-        document.addEventListener('DOMContentLoaded', function() {
-            // Thumbnail image click
-            document.querySelectorAll('.thumbnail-images img').forEach(thumb => {
-                thumb.addEventListener('click', function() {
-                    document.getElementById('main-image').src = this.src;
-                });
-            });
-            
-            // Quantity selector
-            const quantityInput = document.querySelector('.quantity');
-            document.querySelector('.decrease').addEventListener('click', function() {
-                if (parseInt(quantityInput.value) > 1) {
-                    quantityInput.value = parseInt(quantityInput.value) - 1;
-                }
-            });
-            
-            document.querySelector('.increase').addEventListener('click', function() {
-                quantityInput.value = parseInt(quantityInput.value) + 1;
-            });
-            
-            // Add to cart button
-            document.querySelector('.add-to-cart').addEventListener('click', function() {
-                const product = {
-                    id: '1',
-                    name: 'Inter Miami Home Jersey 2023',
-                    price: 89.99,
-                    image: 'images/jersey1.jpg',
-                    quantity: parseInt(quantityInput.value),
-                    size: document.querySelector('input[name="size"]:checked').nextElementSibling.textContent
-                };
-                
-                // Check if product already in cart
-                const existingItem = cart.find(item => item.id === product.id && item.size === product.size);
-                
-                if (existingItem) {
-                    existingItem.quantity += product.quantity;
-                } else {
-                    cart.push(product);
-                }
-                
-                // Update localStorage and UI
-                localStorage.setItem('cart', JSON.stringify(cart));
-                updateCartCount();
-                
-                // Show success message
-                alert(`${product.name} (Size: ${product.size}) has been added to your cart!`);
-            });
-        });
-    </script>
 </body>
 </html>

@@ -97,3 +97,79 @@ function validateForm() {
         });
       });
     </script>
+    <script>
+      // Product page functionality
+      document.addEventListener('DOMContentLoaded', function() {
+        // Thumbnail image click
+        document.querySelectorAll('.thumbnail-images img').forEach(thumb => {
+          thumb.addEventListener('click', function() {
+            // Remove active class from all thumbnails
+            document.querySelectorAll('.thumbnail-images img').forEach(img => {
+              img.classList.remove('active');
+            });
+            
+            // Add active class to clicked thumbnail
+            this.classList.add('active');
+            
+            // Update main image
+            document.getElementById('main-image').src = this.dataset.main;
+          });
+        });
+        
+        // Quantity selector
+        const quantityInput = document.querySelector('.quantity');
+        document.querySelector('.decrease').addEventListener('click', function() {
+          if (parseInt(quantityInput.value) > 1) {
+            quantityInput.value = parseInt(quantityInput.value) - 1;
+          }
+        });
+        
+        document.querySelector('.increase').addEventListener('click', function() {
+          quantityInput.value = parseInt(quantityInput.value) + 1;
+        });
+        
+        // Validate quantity input
+        quantityInput.addEventListener('change', function() {
+          if (isNaN(this.value) || this.value < 1) {
+            this.value = 1;
+          }
+        });
+        
+        // Add to cart button
+        document.querySelector('.add-to-cart').addEventListener('click', function() {
+          const product = {
+            id: 'inter-miami-2024-home',
+            name: 'Inter Miami Home Jersey 2024',
+            price: 89.99,
+            image: 'images/Jerseys/1026752_Main_1946086.avif',
+            quantity: parseInt(quantityInput.value),
+            size: document.querySelector('input[name="size"]:checked').nextElementSibling.textContent
+          };
+          
+          // In a real app, you would add to cart here
+          alert(`${product.quantity} x ${product.name} (Size: ${product.size}) added to cart!`);
+          
+          // Button animation
+          const originalText = this.innerHTML;
+          this.innerHTML = '<i class="fas fa-check me-2"></i>Added!';
+          this.classList.add('btn-success');
+          
+          setTimeout(() => {
+            this.innerHTML = originalText;
+            this.classList.remove('btn-success');
+          }, 2000);
+        });
+        
+        // Wishlist button
+        document.querySelector('.wishlist-btn').addEventListener('click', function() {
+          const originalText = this.innerHTML;
+          this.innerHTML = '<i class="fas fa-heart me-2"></i>Saved!';
+          this.classList.add('text-danger');
+          
+          setTimeout(() => {
+            this.innerHTML = originalText;
+            this.classList.remove('text-danger');
+          }, 2000);
+        });
+      });
+    </script>
