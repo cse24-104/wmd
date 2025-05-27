@@ -89,7 +89,7 @@
     </style>
 </head>
 <body>
-    <!-- Navigation -->
+<!-- Navigation -->
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
       <div class="container">
         <a class="navbar-brand" href="index.html">
@@ -99,6 +99,24 @@
           <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+            <li class="nav-item"><a class="nav-link active" href="shop.html">Shop</a></li>
+            <li class="nav-item"><a class="nav-link" href="product.html">Products</a></li>
+            <li class="nav-item"><a class="nav-link" href="#New Arrivals">New Arrivals</a></li>
+            <li class="nav-item"><a class="nav-link" href="feedback.html">Contact</a></li>
+            <li class="nav-item"><a class="nav-link" href="cart.html"><i class="fas fa-shopping-cart"></i> Cart</a></li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown">
+                My Account
+              </a>
+              <ul class="dropdown-menu">
+                <li><a class="dropdown-item" href="Login">Login</a></li>
+                <li><a class="dropdown-item" href="Sign Up">Sign Up - New Customer!</a></li>
+                <li><a class="dropdown-item" href="Order History">Order History</a></li>
+              </ul>
+            </li>
+          </ul>
           <form class="d-flex">
             <input class="form-control me-2" type="search" placeholder="Search products..." aria-label="Search">
             <button class="btn btn-outline-success" type="submit">Search</button>
@@ -106,6 +124,10 @@
         </div>
       </div>
     </nav>
+
+    <button class="back-button" onclick="window.history.back()">
+      <i class="fas fa-arrow-left me-2"></i>Back to Shop
+    </button>
 
     <!-- Shop Header -->
     <div class="shop-header">
